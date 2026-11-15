@@ -1,0 +1,1 @@
+Start programmet med "node src/server.js" i terminalen

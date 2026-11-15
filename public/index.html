@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Folketingets Ministre</title>
+    <link rel="stylesheet" href="/style.css">
+    <script type="text/javascript" src="app.js" defer></script>
+</head>
+<body>
+<main>
+    <h1>Ministre i Folketinget</h1>
+    <p>Nedenfor finder du en liste af ministrene i Folketinget, som du kan ændre på for at lave din ønske-regering!</p>
+    <p>Tilføj dine egne ministre - måske endda en helt ny ministerpost! Du kan også slette de eksisterende ministre eller redigére dem</p>
+    <section>
+        <h2>Ministre i databasen</h2>
+        <form id="search">
+            <label for="name">Søg efter navn</label>
+            <input id="name" placeholder="eks. Sofie">
+            <button>Søg</button>
+            <button type="button" id="all">Vis alle</button>
+        </form>
+        <p id="message" role="status"></p>
+        <table>
+            <thead>
+            <tr>
+                <th scope="col">Navn</th>
+                <th scope="col">Stilling</th>
+                <th scope="col">Handlinger</th>
+            </tr>
+            </thead>
+            <tbody id="members"></tbody>
+        </table>
+    </section>
+    <section>
+        <h2 id="create-edit-heading">Opret et medlem</h2>
+        <form id="create">
+            <label>Navn <input name="name" required></label>
+            <label>Stilling <input name="position" required></label>
+            <label>Parti <input name="party" required></label>
+            <button type="submit">Opret</button>
+            <button id="cancel-edit" type="button" hidden>Annullér redigering</button>
+            <p id="form-error" role="alert"></p>
+        </form>
+    </section>
+    <section>
+        <h2>Ekstern integration</h2>
+        <p>Her kan du hente aktive Folketingsmedlemmer fra Oda. <strong>Bemærk</strong>, at dette kan tage lidt tid</p>
+        <button id="external">Hent medlemmer</button>
+        <ul id="members-external"></ul>
+        <small>Eksterne data: <a href="https://oda.ft.dk/" target="_blank" rel="noopener">Oda</a> (CC BY-SA).</small>
+    </section>
+</main>
